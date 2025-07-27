@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Создание и прохождение теста</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Создание теста</h1>
+        <button onclick="clearLocalStorage()">Очистить локальное хранилище</button>
+        <div id="create-test-container">
+            <label for="question">Вопрос:</label>
+            <input type="text" id="question">
+            <div id="answers-container">
+                <label for="answer-1">Ответ 1:</label>
+                <input type="text" id="answer-1">
+            </div>
+            <button onclick="addAnswer()">Добавить ещё один ответ</button>
+            <label for="right-answer">Правильный ответ (номер):</label>
+            <input type="number" id="right-answer">
+            <button onclick="addQuestion()">Добавить вопрос</button>
+            <button onclick="finishTest()">Завершить создание теста</button>
+        </div>
+
+        <div id="quiz-container" style="display: none;">
+            <h1>Прохождение теста</h1>
+        </div>
+
+        <div id="result-container" style="display: none;">
+            <p id="score"></p>
+            <p id="result"></p>
+            <p id="wrong-answers"></p>
+            <button onclick="retryTest()">Пройти тест заново</button>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
